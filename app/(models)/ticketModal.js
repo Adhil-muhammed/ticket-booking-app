@@ -1,10 +1,9 @@
-// import { Schema, model, models } from "mongoose";
 import mongoose from "mongoose";
 
 const ticketSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: [true, "please provide title"],
   },
   description: {
     type: String,

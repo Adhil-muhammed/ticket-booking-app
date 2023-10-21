@@ -1,6 +1,7 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "./(components)";
+import { Inter } from "next/font/google";
+import { TankstackProvider } from "@/app/(providers)";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
@@ -16,12 +17,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className=" flex flex-col h-screen max-h-screen">
-          <NavBar />
-          <div className="flex-grow overflow-y-auto bg-[#2b3441] text-white">
-            {children}
+        <TankstackProvider>
+          <div className=" flex flex-col h-screen max-h-screen">
+            <NavBar />
+            <div className="flex-grow overflow-y-auto bg-[#2b3441] text-white">
+              {children}
+            </div>
           </div>
-        </div>
+        </TankstackProvider>
       </body>
     </html>
   );

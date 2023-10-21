@@ -1,11 +1,18 @@
+"use client";
 import React from "react";
 import { TicketCard } from "./(components)";
-import { connection } from "./(dbConfig)/ticket.db";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const DashBoard = () => {
-  connection();
+  useQuery({
+    queryKey: ["tickets"],
+    queryFn: async () => {
+      const { data } = await axios.get("/api/ticket");
+    },
+  });
   return (
-    <div className=" flex justify-between px-5 flex-wrap">
+    <div className=" flex justify-between px-5 flex-wrap mt-20">
       <TicketCard />
       <TicketCard />
       <TicketCard />
