@@ -14,7 +14,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Products", "Pricing", "Craete new tickets"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 export const NavBar = () => {
@@ -48,7 +48,7 @@ export const NavBar = () => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <MenuIcon sx={{ color: "black" }} />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -70,7 +70,13 @@ export const NavBar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography
+                    textAlign="center"
+                    className="font-medium text-lg"
+                    color={"black"}
+                  >
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -80,10 +86,18 @@ export const NavBar = () => {
             {pages.map((page) => (
               <Button
                 key={page}
+                variant="outlined"
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, display: "block", mx: 1 }}
+                className="font-medium text-lg"
               >
-                {page}
+                <Typography
+                  textAlign="center"
+                  className="font-medium text-lg"
+                  color={"black"}
+                >
+                  {page}
+                </Typography>
               </Button>
             ))}
           </Box>

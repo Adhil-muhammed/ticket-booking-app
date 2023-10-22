@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <TankstackProvider>
           <div className=" flex flex-col h-screen max-h-screen">
             <NavBar />
-            <div className="flex-grow overflow-y-auto bg-slate-200 text-white background-image">
+            <div className="flex-grow overflow-y-auto bg-[#cdd1e4] text-white ">
               {children}
             </div>
           </div>

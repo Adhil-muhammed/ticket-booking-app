@@ -1,13 +1,15 @@
 "use client";
+
 import * as React from "react";
-import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
+import { Box, styled, Typography } from "@mui/material";
 import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
+import { useImmer } from "use-immer";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 10,
+  width: "100%",
   borderRadius: 5,
   [`&.${linearProgressClasses.colorPrimary}`]: {
     backgroundColor:
@@ -22,9 +24,17 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 // Inspired by the former Facebook spinners.
 
 export const ProgressDisplay = () => {
+  const [progreeValue, setProgress] = useImmer(50);
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <BorderLinearProgress variant="determinate" value={50} />
+    <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center", gap: 2 }}>
+      <BorderLinearProgress
+        variant="determinate"
+        value={progreeValue}
+        valueLabelDisplay="auto"
+      />
+      <Typography variant="body2" color="textSecondary">
+        {`${progreeValue}%`}
+      </Typography>
     </Box>
   );
 };
