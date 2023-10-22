@@ -23,7 +23,7 @@ export const TicketCard = () => {
         }
         action={
           <IconButton color="error">
-            <CloseIcon />
+            <CloseIcon fontSize="medium" sx={{ bgcolor: "beige" }} />
           </IconButton>
         }
         title="Shrimp and Chorizo Paella"
