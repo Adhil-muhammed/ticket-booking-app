@@ -1,4 +1,5 @@
 "use client";
+
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -35,7 +36,7 @@ export const NavBar = () => {
     setAnchorElUser(null);
   };
   return (
-    <AppBar position="fixed" sx={{ bgcolor: "#090e35" }}>
+    <AppBar position="fixed" sx={{ bgcolor: "transparent" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

@@ -1,5 +1,5 @@
 import React from "react";
-import { IconButton } from "@mui/material";
+import { Box, IconButton, Stack } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -14,10 +14,7 @@ import { PriorityDisplay, ProgressDisplay, StatusDIsplay } from ".";
 
 export const TicketCard = () => {
   return (
-    <Card
-      sx={{ maxWidth: 345, mt: 5, bgcolor: "#4e4a55", borderRadius: 3 }}
-      variant="outlined"
-    >
+    <Card sx={{ maxWidth: 345, mt: 5, borderRadius: 3 }} variant="outlined">
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">

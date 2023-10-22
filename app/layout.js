@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { TankstackProvider } from "@/app/(providers)";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import "../app/(assets)/common.scss";
 
 config.autoAddCss = false;
 const inter = Inter({ subsets: ["latin"] });
@@ -20,7 +21,7 @@ export default function RootLayout({ children }) {
         <TankstackProvider>
           <div className=" flex flex-col h-screen max-h-screen">
             <NavBar />
-            <div className="flex-grow overflow-y-auto bg-[#2b3441] text-white">
+            <div className="flex-grow overflow-y-auto bg-slate-200 text-white background-image">
               {children}
             </div>
           </div>
