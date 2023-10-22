@@ -23,8 +23,8 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 
 // Inspired by the former Facebook spinners.
 
-export const ProgressDisplay = () => {
-  const [progreeValue, setProgress] = useImmer(50);
+export const ProgressDisplay = ({ progress }) => {
+  const [progreeValue, setProgress] = useImmer(progress);
   return (
     <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center", gap: 2 }}>
       <BorderLinearProgress
