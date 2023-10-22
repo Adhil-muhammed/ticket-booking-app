@@ -20,8 +20,6 @@ export const TicketCard = (ticketData) => {
     <Card
       sx={{
         mt: 5,
-        // width: 450,
-        // maxWidth: 450,
         borderRadius: 3,
         backgroundColor: "#f7f9f7",
       }}
@@ -46,7 +44,6 @@ export const TicketCard = (ticketData) => {
         title="Shrimp and Chorizo Paella"
         subheader="September 14, 2016"
       />
-
       <CardContent>
         <Typography
           variant="body2"
