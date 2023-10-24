@@ -1,14 +1,18 @@
 "use client";
+
 import React from "react";
 import axios from "axios";
-import { TicketCard } from "./(components)";
+import { Grid } from "@mui/material";
+import { TicketCard, CreateTicketModal } from "./(components)";
+import { useCreateTicket } from "./(components)/(hooks)";
 import { useQuery } from "@tanstack/react-query";
 import { Loader } from "@/app/(components)/Loader";
-import { Grid } from "@mui/material";
 
 const uniqTicketCategory = ["hardware damage", "physical damage"];
 
 const DashBoard = () => {
+  const { open, onToggleTicketCreateModal } = useCreateTicket();
+  console.log("open:DashBoard ", open);
   const { data, isLoading } = useQuery({
     queryKey: ["tickets"],
     queryFn: async () => {
@@ -32,6 +36,7 @@ const DashBoard = () => {
           );
         })}
       </Grid>
+      <CreateTicketModal open={open} setOpen={onToggleTicketCreateModal} />
     </div>
   );
 };
